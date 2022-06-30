@@ -63,8 +63,9 @@ static const char unknown_str[] = "n/a";
  */
 static const struct arg args[] = {
 	/* function format          argument */
-	{ cpu_perc, "[CPU  %s%%]", NULL },
-	{ ram_perc, "[RAM  %s%%] | ", NULL },
-	{ run_command, ": %4s | ", "amixer sget Master | awk -F\"[][]\" '/%/ { print $2 }' | head -n1" },
-	{ datetime, "%s",           " %a %d %b, %H:%M " },
+	{ run_command, "", "/usr/local/bin/weather" },
+	{ cpu_perc, "♥ %s%% | ", NULL },
+	{ ram_perc, " %s%% | ", NULL }, // there is a nerd font char here that may not display in xterm
+	{ run_command, "墳%4s | ", "amixer sget Master | awk -F\"[][]\" '/%/ { print $2 }' | head -n1" },
+	{ datetime, "%s",           "%a %d %b, %H:%M " },
 };
